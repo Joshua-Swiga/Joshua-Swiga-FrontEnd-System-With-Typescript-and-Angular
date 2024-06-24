@@ -1,0 +1,48 @@
+<div>
+    <p>Student Create</p>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h4>
+                    <a routerLink="/student" class="btn btn-danger float-end">Back</a>
+                </h4>
+            </div>
+            <div class="card-body">
+<!--                 
+                <div *ngif="isLoading": else elseForm >
+                    <app-loader: title="loadingTitle" />
+                </div>
+                <ng-template #elseForm></ng-template> -->
+
+
+                <form (ngSubmit)="saveStudent()">
+                    <label>Name</label>
+                    <input type="text" [(ngModel)]="name" name="name" class="form-control"/>
+                    <!-- Understand what this new syntax is. Like is it how error messages are displayed -->
+                    <span *ngIf="errors.name" class="text-danger" > {{errors.name}} </span> 
+                
+                
+                    <label>Course</label>
+                    <input type="text" [(ngModel)]="course" name="course" class="form-control"/>
+                  
+                    <span *ngIf="errors.course" class="text-danger" > {{errors.course}} </span> 
+                
+                
+                
+                    <label>Email</label>
+                    <input type="text" [(ngModel)]="email" name="email" class="form-control"/>
+                    <span *ngIf="errors.email" class="text-danger" > {{errors.email}} </span> 
+
+                
+                
+                    <label>Phone</label>
+                    <input type="text" [(ngModel)]="phone" name="phone" class="form-control"/>
+                    <span *ngIf="errors.phone" class="text-danger" > {{errors.phone}} </span>
+                    <button type="submit" class="btn btn-primary" >Save</button> 
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
